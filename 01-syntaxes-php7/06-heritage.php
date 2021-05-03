@@ -1,10 +1,12 @@
 <?php
 
-class Product 
+abstract class Product 
 {
   
-  private string $name;
+  protected string $name;
   private float $price;
+
+  protected static float $tva = 0.2;
 
   public function __construct(string $name, float $price)
   { 
@@ -57,8 +59,17 @@ class Book extends Product
   {
     $this->isbn = $isbn;
   }
+
+  public function display(): void 
+  {
+    echo "TITRE: $this->name<br>CODE ISBN: $this->isbn<br>PRIX FINAL: ".($this->getPrice() * (1 + self::$tva));
+  }
 }
 
-$book1 = new Book("Mon livre", 12.34, "ZR3RTGHRTGQ");
+//$product = new Product("Mon produit", 43.21);
+//var_dump($product);
+
+$book1 = new Book("Mon livre", 20.00, "ZR3RTGHRTGQ");
+$book1->display();
 
 var_dump($book1);
