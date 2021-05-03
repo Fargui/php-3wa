@@ -3,9 +3,12 @@
 declare(strict_types=1);
 
 function fib(int $nb = 30): Generator {
-  yield 1;
-  yield 1;
-  yield 2;
+  $prev = 0;
+  $curr = 1;  
+  for ($i=1; $i<= $nb; $i++) {
+    yield $curr;
+    [$prev, $curr] = [$curr, $prev+$curr];
+  }
 }
 
 foreach(fib() as $v) {
