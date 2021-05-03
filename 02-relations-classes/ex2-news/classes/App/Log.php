@@ -8,6 +8,7 @@ class Log {
 
   public static function addLog(string $log) {
     self::$storage[] = $log;
+    self::$count++;
   }
   public static function getStorage(): array {
     return self::$storage;
