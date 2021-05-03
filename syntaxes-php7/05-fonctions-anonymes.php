@@ -2,15 +2,15 @@
 
 class Record
 {
-  private $price = 4.5;
+  private float $price = 4.5;
 
-  public function getPrice()
+  public function getPrice(): float
   {
     return $this->price;
   }
 }
 
-$showPrice = function ($mult) {
+$showPrice = function (float $mult) {
   return $mult * $this->getPrice();
 };
 
