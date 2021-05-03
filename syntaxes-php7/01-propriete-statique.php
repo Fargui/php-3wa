@@ -17,10 +17,6 @@ class Foo
   // version PHP 8
   //public function __construct(private string $baz = "") {}
 
-
-
-
-
   /**
    * Get the value of baz
    */
