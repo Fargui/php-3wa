@@ -3,14 +3,14 @@
 namespace App;
 
 class Log {
-  private static array $storage = [];
-  private static int $count = 0;
+  private array $storage = [];
+  private int $count = 0;
 
-  public static function addLog(string $log) {
-    self::$storage[] = $log;
-    self::$count++;
+  public function addLog(string $log) {
+    $this->storage[] = $log;
+    $this->count++;
   }
-  public static function getStorage(): array {
-    return self::$storage;
+  public function getStorage(): array {
+    return $this->storage;
   }
 }
