@@ -1,22 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-<ul>
-    <?php
-    if($dossier = opendir('./')){
-        while (false !== $fichier = readdir($dossier)){ ?>
-            <li><a href="<?= $fichier ?>"><?= $fichier ?></a></li>
-            <?php
-        }
-        closedir($dossier);
-    } ?>
-</ul>
-</body>
-</html>
+<?php
+$dir = substr(dirname($_SERVER['PHP_SELF']),strlen($_SERVER['DOCUMENT_ROOT']));
+echo "<h2>Index of ".$dir.":</h2>";
+$g = glob("*");
+usort($g,function($a,$b) {
+    if(is_dir($a) == is_dir($b))
+        return strnatcasecmp($a,$b);
+    else
+        return is_dir($a) ? -1 : 1;
+});
+echo implode("<br>",array_map(function($a) {
+  $url = $a;
+  if (is_dir($a)) $url.='/'; 
+  return '<a href="'.$url.'">'.$a.'</a>';
+},$g));
