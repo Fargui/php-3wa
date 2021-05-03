@@ -11,13 +11,13 @@ use Park\Road\Car;
 use Park\Plane;
 
 // détermine la vitesse 
-Car::setSpeed(180);
+//Car::setSpeed(180);
 
 // $name 
 $kia = new Car('Kia');
 $kia->setEngine('electric');
 
-$kia->park('Place de la liberté', 'place : 56A');
+$kia->park('Place de la liberté', '56A');
 $kia->setStatus('stop');
 
 // méthode magique permettant d'afficher les informations
@@ -27,7 +27,7 @@ echo  $kia . "\n";
 echo "\n";
 
 // Plane
-Plane::setSpeed(890);
+//Plane::setSpeed(890);
 
 // $name 
 $plane = new Plane('Airbus A320');
