@@ -3,9 +3,9 @@
 namespace Park;
 
 abstract class Vehicle {
-  private string $status;
-  private string $name;
-  private string $engine;
+  protected string $status;
+  protected string $name;
+  protected string $engine;
 
   public function __construct (string $name) {
     $this->name = $name;
@@ -19,6 +19,6 @@ abstract class Vehicle {
     $this->engine = $engine;
   }
 
-  //abstract public function speed(): float;
+  abstract public static function setSpeed(float $speed);
   abstract public function __toString(): string;
 }
