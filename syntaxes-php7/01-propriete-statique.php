@@ -1,36 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 class Foo
 {
+  // version PHP 7.3
+  private string $baz;
 
-  private $baz;
+  public static string $bar = 'salut';
 
-  public static $bar = 'salut';
-
-  public function __construct($value = "")
+  public function __construct(string $baz = "")
   {
-    $this->baz = $value;
+    $this->baz = $baz;
   }
 
+  // version PHP 8
+  //public function __construct(private string $baz = "") {}
 
   /**
    * Get the value of baz
    */
-  public function getBaz()
+  public function getBaz() :string
   {
     return $this->baz;
   }
 
   /**
    * Set the value of baz
-   *
-   * @return  self
    */
-  public function setBaz($baz)
+  public function setBaz(string $baz): void
   {
     $this->baz = $baz;
-
-    return $this;
   }
 
   public function useStaticProp()
@@ -50,7 +50,7 @@ $instance2->setBaz("yo");
 var_dump($instance1);
 var_dump($instance2);
 
-print_r($instance1->getBaz());
+print_r($instance2->getBaz());
 echo '<br>';
 print_r(Foo::$bar); // bar est une propriété statique, elle n'appartient pas aux instances mais à la classe
 echo '<br>';
