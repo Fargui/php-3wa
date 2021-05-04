@@ -12,9 +12,14 @@ Bike::setSpeed(50);
 
 $brompton = new Bike('brompton');
 $brompton->setEngine("manual");
+$brompton->park("1 rue Azerty", "B5");
+$brompton->pay(1.2);
+$brompton->pay(1.2);
 
 $kia = new Car('kia');
 $kia->setEngine("essence");
+$kia->park("1 rue Azerty", "C6");
+$kia->pay(4.5);
 
 $airbus = new Plane('airbus 320');
 
