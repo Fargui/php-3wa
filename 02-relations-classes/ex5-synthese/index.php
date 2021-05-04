@@ -23,11 +23,14 @@ $parking->addPark($brompton);
 $parking->addPark($kia);
 try {
     $parking->addPark($airbus); // exception
-
 } catch (TypeError $e) {
-    echo $e->getMessage();
+    echo '<p style="color:red;">'.$e->getMessage().'</p>';
 }
-$parking->removePark($brompton);
+try {
+  //$parking->removePark($brompton);
+} catch (Error $e) {
+  echo '<p style="color:red;">'.$e->getMessage().'</p>';
+}
 
-var_dump($parking);
-// echo $parking . "\n";
+//var_dump($parking);
+echo $parking . "\n";

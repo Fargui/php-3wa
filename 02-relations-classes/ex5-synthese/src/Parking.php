@@ -16,20 +16,28 @@ class Parking {
   }
 
   public function addPark(Parkable $parkable) {
-    // $parkable->park($this->address, rand(0, 100));
-    // $parkable->pay(rand(0,5));
-    // $this->parkables[] = $parkable;
+    $parkable->park($this->address, rand(0, 100));
+    $parkable->pay(rand(0,5));
+    $this->parkables->attach($parkable);
   }
   public function removePark(Parkable $parkable) {
-    // // est-ce que le véhicule est présent dans le tableau ? si oui à quel index (array_search) ?
-    // $index = array_search($parkable, $this->parkables);
-    // if ($index === false) {
-    //   throw new \Error("Véhicule " . $parkable->getName() . " non garé dans ce parking");
-    // }
-    // // si oui le retirer (array_splice)
-    // array_splice($this->parkables, $index, 1);
+    // est-ce que le véhicule est présent dans le tableau ? 
+    if (!$this->parkables->contains($parkable)) {
+      throw new \Error("Véhicule " . $parkable->getName() . " non garé dans ce parking");
+    }
+    // si oui le retirer (array_splice)
+    $this->parkables->detach($parkable);
   }
   public function count(): int {
-    // return count($this->parkables);
+    return $this->parkables->count();
+  }
+  public function __toString(): string {
+    $str = "<div><p>PARKING au $this->address</p>";
+    $str .= "<p>".$this->count()." véhicules garés</p><ul>";
+    foreach($this->parkables as $parkable) {
+      $str .= "<li>$parkable</li>";
+    }
+    $str .= "</ul></div>";
+    return $str;
   }
 }

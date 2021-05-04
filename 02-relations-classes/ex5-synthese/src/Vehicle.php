@@ -21,4 +21,12 @@ abstract class Vehicle {
 
   abstract public static function setSpeed(float $speed);
   abstract public function __toString(): string;
+
+  /**
+   * Get the value of name
+   */ 
+  public function getName()
+  {
+    return $this->name;
+  }
 }
