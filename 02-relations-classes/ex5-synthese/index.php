@@ -2,31 +2,33 @@
 
 require_once('vendor/autoload.php');
 
-use Park\Road\Car;
+use Park\Road\{Car, Bike};
 use Park\Plane;
 
 // détermine la vitesse 
 Car::setSpeed(180);
+Plane::setSpeed(890.5);
+Bike::setSpeed(50);
 
-// $name 
-$kia = new Car('Kia');
-$kia->setEngine('electric');
+$brompton = new Bike('brompton');
+$brompton->setEngine("manual");
 
-$kia->park('Place de la liberté', '56A');
-$kia->setStatus('stop');
+$kia = new Car('kia');
+$kia->setEngine("essence");
 
-// méthode magique permettant d'afficher les informations
-echo  $kia . "\n";
-// Name: Kia, Engine: electric, Status: stop, Park address: Place du chateau place: 56A
+$airbus = new Plane('airbus 320');
 
-echo "\n";
+echo "<p>$brompton</p><p>$kia</p><p>$airbus</p>";
 
-// Plane
-Plane::setSpeed(890);
 
-// $name 
-$plane = new Plane('Airbus A320');
-$plane->setEngine('petrol');
-$plane->setStatus('flight');
+// $parking = new Parking();
+// $parking->addPark($brompton);
+// $parking->addPark($kia);
+// try {
+//     $parking->addPark($airbus); // exception
 
-echo $plane . "\n";
+// } catch (TypeError $e) {
+//     echo $e->getMessage();
+// }
+
+// echo $parking . "\n";
