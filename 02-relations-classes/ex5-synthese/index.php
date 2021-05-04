@@ -3,7 +3,7 @@
 require_once('vendor/autoload.php');
 
 use Park\Road\{Car, Bike};
-use Park\{Plane, Parking};
+use Park\{Plane, Parking, Ferry};
 
 // détermine la vitesse 
 Car::setSpeed(180);
@@ -27,10 +27,13 @@ try {
     echo '<p style="color:red;">'.$e->getMessage().'</p>';
 }
 try {
-  //$parking->removePark($brompton);
+  $parking->removePark($brompton);
 } catch (Error $e) {
   echo '<p style="color:red;">'.$e->getMessage().'</p>';
 }
 
 //var_dump($parking);
-echo $parking . "\n";
+//echo $parking . "\n";
+
+$ferry = new Ferry("Ferry 1", $parking);
+var_dump($ferry);

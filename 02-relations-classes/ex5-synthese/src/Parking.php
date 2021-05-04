@@ -31,13 +31,22 @@ class Parking {
   public function count(): int {
     return $this->parkables->count();
   }
+  public function getAll(): string {
+    $str = "<ul>";
+    // foreach($this->parkables as $parkable) {
+    //   $str .= "<li>$parkable</li>";
+    // }
+    $this->parkables->rewind();
+    while($this->parkables->valid()) {
+      echo "<li>" . $this->parkables->current() . "</li>";
+      $this->parkables->next();
+    }
+    $str .= "</ul>";
+    return $str;
+  }
   public function __toString(): string {
     $str = "<div><p>PARKING au $this->address</p>";
-    $str .= "<p>".$this->count()." véhicules garés</p><ul>";
-    foreach($this->parkables as $parkable) {
-      $str .= "<li>$parkable</li>";
-    }
-    $str .= "</ul></div>";
+    $str .= "<p>".$this->count()." véhicules garés</p>".$this->getAll()."</div>";
     return $str;
   }
 }
