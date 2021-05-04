@@ -38,7 +38,7 @@ class Parking {
     // }
     $this->parkables->rewind();
     while($this->parkables->valid()) {
-      echo "<li>" . $this->parkables->current() . "</li>";
+      $str .= "<li>" . $this->parkables->current() . "</li>";
       $this->parkables->next();
     }
     $str .= "</ul>";

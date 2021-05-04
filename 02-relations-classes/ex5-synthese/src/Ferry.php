@@ -8,14 +8,23 @@ class Ferry extends Vehicle implements Navigable {
 
   protected static float $speed = 0.0;
 
-  public function __construct(string $name, Parking $parking) {
-    parent::__construct($name);
-  }
-
   public static function setSpeed(float $speed) {
     self::$speed = $speed;
   }
   public function __toString(): string {
-    return "";
+    $str = "<div>FERRY<br>
+    NAME: $this->name";
+    if (self::$speed > 0) {
+      $str .= "<br>VITESSE MAX : ".self::$speed;
+    }
+    foreach($this->parkings as $parking) {
+      $str .= $parking;
+    }
+    $str .= "</div>";
+    return $str;
+  }
+
+  public function addParking(Parking $parking) {
+    $this->parkings[] = $parking;
   }
 }
