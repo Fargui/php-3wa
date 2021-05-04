@@ -4,7 +4,7 @@ namespace Park\Road;
 
 use Park\Vehicle;
 
-class Bike extends Vehicle {
+class Bike extends Vehicle implements Parkable {
   protected static float $speed = 0.0;
 
   public static function setSpeed(float $speed) 

@@ -4,7 +4,7 @@ namespace Park\Road;
 
 use Park\Vehicle;
 
-final class Car extends Vehicle {
+final class Car extends Vehicle implements Parkable {
   private string $park = "";
 
   protected static float $speed = 0.0;
