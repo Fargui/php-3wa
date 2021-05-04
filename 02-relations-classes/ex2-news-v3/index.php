@@ -15,4 +15,5 @@ $n4 = new ManageNews($logger2, "Article MongoDB");
 $n5 = new ManageNews($logger2, "Article Python");
 
 var_dump($logger1->getStorage());
+
 var_dump($logger2->getStorage());
