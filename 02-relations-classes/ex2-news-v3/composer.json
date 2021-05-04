@@ -1,0 +1,11 @@
+{
+    "name": "guillaumedumez/ex2-news-v3",
+    "require": {},
+
+
+    "autoload": {
+        "psr-4": {
+            "App\\" : "classes/"
+        }
+    }
+}
