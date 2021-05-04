@@ -1,0 +1,15 @@
+{
+	"name": "remyturpault/ex5-synthese",
+	"authors": [
+		{
+			"name": "Rémy 3wa",
+			"email": "remy.turpault@3wa.io"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Park\\": "src/"
+		}
+	},
+	"require": {}
+}
