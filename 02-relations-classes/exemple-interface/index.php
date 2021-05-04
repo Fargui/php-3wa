@@ -28,6 +28,6 @@ $shop->add($p2);
 $shop->add($p3);
 $shop->add($p4);
 $shop->add($p5);
-$shop->add($p6);
+//$shop->add($p6); // fatal error car Potato n'implémente pas Productable
 
 $shop->products();
