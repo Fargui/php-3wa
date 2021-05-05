@@ -7,4 +7,4 @@ class Lion extends Animal {
   public function sayHello(): string {
     return "RAWWWWR! Je m'appelle $this->name";
   }
-}
+} 
