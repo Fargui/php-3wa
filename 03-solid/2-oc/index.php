@@ -86,9 +86,12 @@ $htmlFormatter = new \Reporting\Format\HtmlFormatter();
 
 // Création de l'extracteur de rapport
 $reportExtractor = new ReportExtractor();
+
 // Ajout des deux formatters
-$reportExtractor->addHtmlFormatter($htmlFormatter);
-$reportExtractor->addJsonFormatter($jsonFormatter);
+//$reportExtractor->addHtmlFormatter($htmlFormatter);
+//$reportExtractor->addJsonFormatter($jsonFormatter);
+$reportExtractor->addFormatter($htmlFormatter);
+$reportExtractor->addFormatter($jsonFormatter);
 
 // Affichage des différents formats pour le rapport
 $reportExtractor->process($report);
