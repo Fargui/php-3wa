@@ -20,8 +20,6 @@ use Composer\Semver\VersionParser;
 
 
 
-
-
 class InstalledVersions
 {
 private static $installed = array (
@@ -32,19 +30,19 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '9731da68edf0d05013bfc225ba2325135b3d47b5',
-    'name' => 'guillaumedumez/ex5-parking',
+    'reference' => '0c87490a680b473533e69ab36f449725a7918613',
+    'name' => 'remyturpault/ex5-synthese',
   ),
   'versions' => 
   array (
-    'guillaumedumez/ex5-parking' => 
+    'remyturpault/ex5-synthese' => 
     array (
       'pretty_version' => 'dev-main',
       'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '9731da68edf0d05013bfc225ba2325135b3d47b5',
+      'reference' => '0c87490a680b473533e69ab36f449725a7918613',
     ),
   ),
 );
@@ -63,6 +61,7 @@ $packages = array();
 foreach (self::getInstalled() as $installed) {
 $packages[] = array_keys($installed['versions']);
 }
+
 
 if (1 === \count($packages)) {
 return $packages[0];
@@ -255,7 +254,6 @@ public static function reload($data)
 self::$installed = $data;
 self::$installedByVendor = array();
 }
-
 
 
 

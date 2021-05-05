@@ -6,19 +6,19 @@
     'aliases' => 
     array (
     ),
-    'reference' => '9731da68edf0d05013bfc225ba2325135b3d47b5',
-    'name' => 'guillaumedumez/ex5-parking',
+    'reference' => '0c87490a680b473533e69ab36f449725a7918613',
+    'name' => 'remyturpault/ex5-synthese',
   ),
   'versions' => 
   array (
-    'guillaumedumez/ex5-parking' => 
+    'remyturpault/ex5-synthese' => 
     array (
       'pretty_version' => 'dev-main',
       'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => '9731da68edf0d05013bfc225ba2325135b3d47b5',
+      'reference' => '0c87490a680b473533e69ab36f449725a7918613',
     ),
   ),
 );

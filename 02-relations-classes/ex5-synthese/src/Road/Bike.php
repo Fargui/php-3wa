@@ -11,10 +11,11 @@ class Bike extends Vehicle implements Parkable {
   protected static float $speed = 0.0;
 
   public function park(string $name, string $place): void {
+    $this->setStatus("parked");
     $this->park = "adresse: $name, place: $place";
   }
 
-  public function pay(float $price) {
+  public function pay(float $price): void {
     $this->paymentsSum += $price; 
   }
 

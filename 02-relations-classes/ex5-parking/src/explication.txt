@@ -1,8 +1,0 @@
-class abstraite doit avoir methode abstraite 
-les methode abstraites sont là car ça n'est pas generique à l'interieur de la class, donc les class qui heritent de cette classe abstraite vont pouvoir avoir leur propre version de ces fonctions abstraites 
-
-Pour les interfaces, c'est que des contrats (methodes abstraites)
-
-
-
-pivate quand pas d'heritage, sinon protected
