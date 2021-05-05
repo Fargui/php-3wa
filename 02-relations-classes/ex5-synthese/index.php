@@ -47,3 +47,5 @@ $ferry->addParking($parking);
 $ferry->addParking($parking2);
 
 echo $ferry;
+
+var_dump($ferry);

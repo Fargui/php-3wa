@@ -15,7 +15,7 @@ class Bike extends Vehicle implements Parkable {
     $this->park = "adresse: $name, place: $place";
   }
 
-  public function pay(float $price) {
+  public function pay(float $price): void {
     $this->paymentsSum += $price; 
   }
 
