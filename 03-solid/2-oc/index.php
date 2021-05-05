@@ -83,6 +83,7 @@ $report = new Reporting\Report('2016-04-21', 'Titre de mon rapport');
 // Création des formatteurs
 $jsonFormatter = new \Reporting\Format\JsonFormatter();
 $htmlFormatter = new \Reporting\Format\HtmlFormatter();
+$csvFormatter = new \Reporting\Format\CsvFormatter();
 
 // Création de l'extracteur de rapport
 $reportExtractor = new ReportExtractor();
@@ -92,6 +93,7 @@ $reportExtractor = new ReportExtractor();
 //$reportExtractor->addJsonFormatter($jsonFormatter);
 $reportExtractor->addFormatter($htmlFormatter);
 $reportExtractor->addFormatter($jsonFormatter);
+$reportExtractor->addFormatter($csvFormatter);
 
 // Affichage des différents formats pour le rapport
 $reportExtractor->process($report);
