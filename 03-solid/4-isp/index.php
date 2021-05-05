@@ -2,6 +2,8 @@
 
 use Reporting\Format\JsonFormatter;
 use Reporting\Format\HtmlFormatter;
+use Reporting\Format\PHPSerializedFormatter;
+use Reporting\Report;
 
 /**
  * 
@@ -89,5 +91,14 @@ var_dump($report);
 // On fait pareil avec le Html
 $htmlFormatter = new HtmlFormatter();
 // Evidemment ici ça plante, c'est logique :
-$report = $htmlFormatter->deserialize($html); // Lance une exception ..
+//$report = $htmlFormatter->deserialize($html); // Lance une exception ..
 var_dump($report);
+
+$phpSerializedFormatter = new PHPSerializedFormatter();
+$report = new Report("2021-05-04", "Test report");
+// sérialiser le rapport
+$serializedReport = $phpSerializedFormatter->format($report);
+var_dump($serializedReport);
+// désérialiser le string et récupérer à nouveau une instance de report
+$unserializedReport = $phpSerializedFormatter->deserialize($serializedReport);
+var_dump($unserializedReport);

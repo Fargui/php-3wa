@@ -6,7 +6,7 @@ namespace Reporting\Format;
  * Cette classe permet de formater un Report au format JSON, elle ne devrait changer que si le formattage JSON
  * doit lui-même changer
  */
-class JsonFormatter implements FormatterInterface
+class JsonFormatter implements FormatterInterface, DeserializeInterface
 {
     public function format(\Reporting\Report $report): string
     {
@@ -21,6 +21,7 @@ class JsonFormatter implements FormatterInterface
     public function deserialize(string $input): \Reporting\Report
     {
         $contents = json_decode($input);
+        \var_dump($contents);
         $title = $contents->title;
         $date = $contents->date;
         // On retourne un rapport vide juste pour satisfaire le type hinting
