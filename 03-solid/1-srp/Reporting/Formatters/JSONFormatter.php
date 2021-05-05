@@ -2,14 +2,16 @@
 
 namespace Reporting\Formatters;
 
+use Reporting\Report;
+
 class JSONFormatter {
     /**
      * Retourne le rapport formatté en JSON
      *
      * @return string
      */
-    public function formatToJSON(): string
+    public function formatToJSON(Report $report): string
     {
-        return json_encode($this->getContents());
+        return json_encode($report->getContents());
     }
 }

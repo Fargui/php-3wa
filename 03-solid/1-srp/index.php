@@ -52,8 +52,13 @@ spl_autoload_register(function ($className) {
     require_once($className . ".php");
 });
 
-$report = new Reporting\Report('2016-04-21', 'Titre de mon rapport');
+use Reporting\Report;
+use Reporting\Formatters\{HTMLFormatter, JSONFormatter};
 
-echo $report->formatToHTML();
+$report = new Report('2016-04-21', 'Titre de mon rapport');
+$htmlFormatter = new HTMLFormatter();
+$jsonFormatter = new JSONFormatter();
+
+echo $htmlFormatter->formatToHTML($report);
 echo '<hr>';
-echo $report->formatToJSON();
+echo $jsonFormatter->formatToJSON($report);

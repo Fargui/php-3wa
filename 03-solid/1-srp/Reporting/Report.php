@@ -4,15 +4,9 @@ namespace Reporting;
 
 class Report
 {
-    /**
-     * @var string
-     */
-    protected $date;
+    private $date;
 
-    /**
-     * @var string
-     */
-    protected $title;
+    private $title;
 
     /**
      * Constructeur qui reçoit la date et le titre du rapport
